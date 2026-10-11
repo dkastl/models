@@ -1,0 +1,114 @@
+{
+  "@context": {
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "comment": {
+      "@id": "rdfs:comment",
+      "@container": "@language"
+    },
+    "subClassOf": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "isDefinedBy": {
+      "@id": "rdfs:isDefinedBy",
+      "@type": "@id"
+    },
+    "seeAlso": {
+      "@id": "rdfs:seeAlso",
+      "@type": "@id"
+    },
+    "versionInfo": "owl:versionInfo"
+  },
+  "@graph": [
+    {
+      "@id": "https://dkastl.github.io/models/ns/activity#",
+      "@type": "owl:Ontology",
+      "label": {
+        "en": "Activities"
+      },
+      "comment": {
+        "en": "Personal activities recorded with a GPS device, starting with bicycle rides. A playground for trying the toolkit; the models may change."
+      },
+      "versionInfo": "0.1.0",
+      "seeAlso": "https://dkastl.github.io/models/context/activity/v0.1.0.jsonld"
+    },
+    {
+      "@id": "https://dkastl.github.io/models/ns/activity#Ride",
+      "@type": "rdfs:Class",
+      "label": {
+        "en": "Ride"
+      },
+      "comment": {
+        "en": "One bicycle ride, recorded as a GPS track: when it started and ended, how far and how high, and the route as a line. The numbers come from the track as the recording app computed them."
+      },
+      "isDefinedBy": "https://dkastl.github.io/models/ns/activity#",
+      "seeAlso": "https://dkastl.github.io/models/models/activity/Ride/"
+    },
+    {
+      "@id": "https://dkastl.github.io/models/ns/activity#distance",
+      "@type": "rdf:Property",
+      "label": {
+        "en": "distance"
+      },
+      "comment": {
+        "en": "Distance ridden, in metres"
+      },
+      "isDefinedBy": "https://dkastl.github.io/models/ns/activity#",
+      "seeAlso": "https://dkastl.github.io/models/models/activity/Ride/#distance"
+    },
+    {
+      "@id": "https://dkastl.github.io/models/ns/activity#elevationGain",
+      "@type": "rdf:Property",
+      "label": {
+        "en": "elevationGain"
+      },
+      "comment": {
+        "en": "Total climb, in metres"
+      },
+      "isDefinedBy": "https://dkastl.github.io/models/ns/activity#",
+      "seeAlso": "https://dkastl.github.io/models/models/activity/Ride/#elevationGain"
+    },
+    {
+      "@id": "https://dkastl.github.io/models/ns/activity#movingDuration",
+      "@type": "rdf:Property",
+      "label": {
+        "en": "movingDuration"
+      },
+      "comment": {
+        "en": "Time in motion, without stops, as an ISO 8601 duration (for example PT1H52M)"
+      },
+      "isDefinedBy": "https://dkastl.github.io/models/ns/activity#",
+      "seeAlso": "https://dkastl.github.io/models/models/activity/Ride/#movingDuration"
+    },
+    {
+      "@id": "https://dkastl.github.io/models/ns/activity#rideType",
+      "@type": "rdf:Property",
+      "label": {
+        "en": "rideType"
+      },
+      "comment": {
+        "en": "The kind of ride: road, gravel, mountain, commute or touring"
+      },
+      "isDefinedBy": "https://dkastl.github.io/models/ns/activity#",
+      "seeAlso": "https://dkastl.github.io/models/models/activity/Ride/#rideType"
+    },
+    {
+      "@id": "https://dkastl.github.io/models/ns/activity#trackUrl",
+      "@type": "rdf:Property",
+      "label": {
+        "en": "trackUrl"
+      },
+      "comment": {
+        "en": "Where the full GPS track (GPX) is published"
+      },
+      "isDefinedBy": "https://dkastl.github.io/models/ns/activity#",
+      "seeAlso": "https://dkastl.github.io/models/models/activity/Ride/#trackUrl"
+    }
+  ]
+}

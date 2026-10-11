@@ -1,0 +1,34 @@
+title:
+  en: Activity
+description:
+  en: "One outdoor activity recorded as a GPS track: a ride, a hike, a ski day. When it started and ended, how far, how high up and down, the route as a line, and the peaks reached. The numbers come from the track as the recording app computed them."
+status: experimental
+attributes:
+  name:
+    en: Name of the activity, for example "Rokko from Ashiya via Rock Garden"
+  sport:
+    en: "The sport, named after Strava's sport types: ride, gravelRide, mountainBikeRide, hike, walk, run, trailRun, alpineSki, backcountrySki, nordicSki, snowboard, snowshoe"
+  startTime:
+    en: When it started, the time of the first track point (schema.org startTime)
+  endTime:
+    en: When it ended, the time of the last track point (schema.org endTime)
+  distance:
+    en: Distance covered, in metres
+  movingDuration:
+    en: Time in motion, without stops, as an ISO 8601 duration (for example PT1H52M)
+  elevationGain:
+    en: Total climb, in metres
+  elevationLoss:
+    en: Total descent, in metres; for a ski day with lifts, the vertical skied
+  maxElevation:
+    en: Highest point reached, in metres above sea level
+  runs:
+    en: Number of downhill runs, for skiing and snowboarding
+  summits:
+    en: The peaks reached, as Peak entities, for hikes and ski tours
+  commute:
+    en: true when the activity was a commute
+  location:
+    en: "The route: a LineString, or a MultiLineString when the track has gaps. Simplified; the full track is at trackUrl"
+  trackUrl:
+    en: Where the full GPS track (GPX) is published

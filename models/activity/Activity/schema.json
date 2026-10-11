@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dkastl.github.io/models/schema/activity/Activity/v0.2.0.json",
+  "title": "Activity",
+  "description": "One outdoor activity recorded as a GPS track: a ride, a hike, a ski day",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Entity id (URN)"
+    },
+    "type": {
+      "type": "string",
+      "const": "Activity",
+      "description": "Entity type"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Name of the activity",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://uri.etsi.org/ngsi-ld/name"
+    },
+    "sport": {
+      "type": "string",
+      "enum": [
+        "ride",
+        "gravelRide",
+        "mountainBikeRide",
+        "hike",
+        "walk",
+        "run",
+        "trailRun",
+        "alpineSki",
+        "backcountrySki",
+        "nordicSki",
+        "snowboard",
+        "snowshoe"
+      ],
+      "description": "The sport, named after Strava's sport types",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#sport"
+    },
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When it started (the time of the first track point)",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://schema.org/startTime"
+    },
+    "endTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When it ended (the time of the last track point)",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://schema.org/endTime"
+    },
+    "distance": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Distance covered, in metres",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#distance"
+    },
+    "movingDuration": {
+      "type": "string",
+      "pattern": "^PT(?=\\d)(\\d+H)?(\\d+M)?(\\d+S)?$",
+      "description": "Time in motion, without stops, as an ISO 8601 duration",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#movingDuration"
+    },
+    "elevationGain": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total climb, in metres",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#elevationGain"
+    },
+    "elevationLoss": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total descent, in metres",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#elevationLoss"
+    },
+    "maxElevation": {
+      "type": "number",
+      "description": "Highest point reached, in metres above sea level",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#maxElevation"
+    },
+    "runs": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of downhill runs (skiing, snowboarding)",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#runs"
+    },
+    "summits": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "minItems": 1,
+      "description": "Peaks reached (Peak entities). Always an array in the key-values form, even with one peak",
+      "x-ngsi": {
+        "type": "Relationship",
+        "target": "Peak",
+        "multi": true
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#summits"
+    },
+    "commute": {
+      "type": "boolean",
+      "description": "true when the activity was a commute",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#commute"
+    },
+    "location": {
+      "$ref": "https://datamodels.jp/schema/common/Geometry/v1.0.0.json",
+      "properties": {
+        "type": {
+          "enum": [
+            "LineString",
+            "MultiLineString"
+          ]
+        }
+      },
+      "description": "The route: a line, or several lines when the track has gaps",
+      "x-ngsi": {
+        "type": "GeoProperty",
+        "model": "https://datamodels.jp/ns/common/Geometry"
+      },
+      "x-iri": "https://uri.etsi.org/ngsi-ld/location"
+    },
+    "trackUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "Where the full GPS track (GPX) is published",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#trackUrl"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "sport",
+    "startTime",
+    "location"
+  ]
+}

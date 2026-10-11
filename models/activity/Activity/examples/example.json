@@ -1,0 +1,46 @@
+{
+  "id": "urn:ngsi-ld:Activity:2026-10-11-rokko",
+  "type": "Activity",
+  "name": "Rokko from Ashiya via Rock Garden",
+  "sport": "hike",
+  "startTime": "2026-10-11T07:15:00+09:00",
+  "endTime": "2026-10-11T12:40:00+09:00",
+  "distance": 9800,
+  "movingDuration": "PT3H55M",
+  "elevationGain": 930,
+  "elevationLoss": 120,
+  "maxElevation": 931,
+  "summits": [
+    "urn:ngsi-ld:Peak:osm-node-1513935256"
+  ],
+  "location": {
+    "type": "LineString",
+    "coordinates": [
+      [
+        135.3036,
+        34.7343
+      ],
+      [
+        135.2975,
+        34.7452
+      ],
+      [
+        135.2902,
+        34.7531
+      ],
+      [
+        135.2808,
+        34.7618
+      ],
+      [
+        135.2714,
+        34.7702
+      ],
+      [
+        135.2637,
+        34.778
+      ]
+    ]
+  },
+  "trackUrl": "https://example.org/tracks/2026-10-11-rokko.gpx"
+}

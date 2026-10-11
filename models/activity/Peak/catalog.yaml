@@ -1,0 +1,16 @@
+title:
+  en: Peak
+description:
+  en: A mountain summit, as OpenStreetMap maps it (natural=peak), so that activities can say which peaks they reached.
+status: experimental
+attributes:
+  name:
+    en: Name of the peak, as on the map (for example 六甲山)
+  elevation:
+    en: Height of the summit, in metres above sea level (OpenStreetMap ele)
+  osmId:
+    en: The OpenStreetMap node of the summit, for example node/1513935256
+  wikidata:
+    en: The Wikidata item of the peak, for example Q462120
+  location:
+    en: The summit, as a point

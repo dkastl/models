@@ -1,8 +1,8 @@
 # A subject: models that share one @context and one vocabulary. Write the title and description in each language.
 name: activity
-version: 0.1.0
+version: 0.2.0
 source: minted
 title:
   en: Activities
 description:
-  en: "Personal activities recorded with a GPS device, starting with bicycle rides. A playground for trying the toolkit; the models may change."
+  en: "Personal activities recorded with a GPS device, rides, hikes and ski days, and the peaks they reach. A playground for trying the toolkit; the models may change."

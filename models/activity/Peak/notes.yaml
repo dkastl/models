@@ -1,0 +1,4 @@
+# Notes: the sources, the decisions and their reasons, what is left out. Shown on the model's page.
+notes:
+  - en: "A Peak is a summit as OpenStreetMap maps it: a node tagged natural=peak, with name and ele. osmId and wikidata link to OpenStreetMap and Wikidata, where the other facts about the peak live (names in other languages, prominence, photos), so this model does not copy them."
+  - en: "The example is Mt. Rokkō in Kobe, from OpenStreetMap (node 1513935256, checked 2026-10-11). Peaks without an ele tag in OpenStreetMap (Mt. Daisen's node, for example) are left without elevation rather than given a number from elsewhere."

@@ -1,0 +1,39 @@
+standard:
+  name:
+    en: Strava API v3, activities (SummaryActivity, SportType)
+  url: https://developers.strava.com/docs/reference/
+  note:
+    en: "How an activity read from Strava's API corresponds to Activity (field names and units checked on 2026-10-11). Strava has no fields for elevation loss, downhill runs or peaks reached. This table explains the correspondence; it is not a conversion for datamodels convert (which reads CSV)."
+fields:
+  name:
+    to: name
+  sport:
+    to: sport_type
+    note:
+      en: "Ride → ride, GravelRide → gravelRide, MountainBikeRide → mountainBikeRide, Hike → hike, Walk → walk, Run → run, TrailRun → trailRun, AlpineSki → alpineSki, BackcountrySki → backcountrySki, NordicSki → nordicSki, Snowboard → snowboard, Snowshoe → snowshoe. Other sport types (Swim, Yoga, VirtualRide and so on) have no track outdoors and no value here."
+  startTime:
+    to: start_date
+  movingDuration:
+    to: moving_time
+    note:
+      en: Seconds in Strava, an ISO 8601 duration here (4380 → PT1H13M).
+  endTime:
+    to: start_date + elapsed_time
+    note:
+      en: Strava gives the elapsed time in seconds, not the end.
+  distance:
+    to: distance
+    note:
+      en: Metres in both.
+  elevationGain:
+    to: total_elevation_gain
+  maxElevation:
+    to: elev_high
+    note:
+      en: Metres in both.
+  commute:
+    to: commute
+  location:
+    to: map.summary_polyline
+    note:
+      en: An encoded polyline in Strava, decoded into a LineString ([lon, lat]).
