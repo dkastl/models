@@ -11,6 +11,6 @@ A data model node: JSON Schemas, JSON-LD @contexts and vocabularies at https://d
 Licence: [CC0-1.0](LICENSE).
 
 ```bash
-npx github:geolonia/datamodels-toolkit#v0.3.2 check
-npx github:geolonia/datamodels-toolkit#v0.3.2 build   # into _site/
+npx github:geolonia/datamodels-toolkit#v0.3.3 check
+npx github:geolonia/datamodels-toolkit#v0.3.3 build   # into _site/
 ```
