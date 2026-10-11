@@ -1,0 +1,15 @@
+{
+  "@context": {
+    "activity": "https://dkastl.github.io/models/ns/activity#",
+    "Ride": "activity:Ride",
+    "schema": "https://schema.org/",
+    "name": "https://uri.etsi.org/ngsi-ld/name",
+    "rideType": "activity:rideType",
+    "startTime": "schema:startTime",
+    "endTime": "schema:endTime",
+    "distance": "activity:distance",
+    "movingDuration": "activity:movingDuration",
+    "elevationGain": "activity:elevationGain",
+    "trackUrl": "activity:trackUrl"
+  }
+}

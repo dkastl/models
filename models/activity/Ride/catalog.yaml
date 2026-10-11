@@ -1,0 +1,24 @@
+title:
+  en: Ride
+description:
+  en: "One bicycle ride, recorded as a GPS track: when it started and ended, how far and how high, and the route as a line. The numbers come from the track as the recording app computed them."
+status: experimental
+attributes:
+  name:
+    en: Name of the ride, for example "Morning ride along the Tama River"
+  rideType:
+    en: "The kind of ride: road, gravel, mountain, commute or touring"
+  startTime:
+    en: When the ride started, the time of the first track point (schema.org startTime)
+  endTime:
+    en: When the ride ended, the time of the last track point (schema.org endTime)
+  distance:
+    en: Distance ridden, in metres
+  movingDuration:
+    en: Time in motion, without stops, as an ISO 8601 duration (for example PT1H52M)
+  elevationGain:
+    en: Total climb, in metres
+  location:
+    en: "The route: a LineString, or a MultiLineString when the track has gaps. Simplified; the full track is at trackUrl"
+  trackUrl:
+    en: Where the full GPS track (GPX) is published

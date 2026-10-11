@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dkastl.github.io/models/schema/activity/Ride/v0.1.0.json",
+  "title": "Ride",
+  "description": "One bicycle ride, from a GPS track",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Entity id (URN)"
+    },
+    "type": {
+      "type": "string",
+      "const": "Ride",
+      "description": "Entity type"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Name of the ride",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://uri.etsi.org/ngsi-ld/name"
+    },
+    "rideType": {
+      "type": "string",
+      "enum": [
+        "road",
+        "gravel",
+        "mountain",
+        "commute",
+        "touring"
+      ],
+      "description": "The kind of ride",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#rideType"
+    },
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the ride started (the time of the first track point)",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://schema.org/startTime"
+    },
+    "endTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the ride ended (the time of the last track point)",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://schema.org/endTime"
+    },
+    "distance": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Distance ridden, in metres",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#distance"
+    },
+    "movingDuration": {
+      "type": "string",
+      "pattern": "^PT(?=\\d)(\\d+H)?(\\d+M)?(\\d+S)?$",
+      "description": "Time in motion, without stops, as an ISO 8601 duration",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#movingDuration"
+    },
+    "elevationGain": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Total climb, in metres",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#elevationGain"
+    },
+    "location": {
+      "$ref": "https://datamodels.jp/schema/common/Geometry/v1.0.0.json",
+      "properties": {
+        "type": {
+          "enum": [
+            "LineString",
+            "MultiLineString"
+          ]
+        }
+      },
+      "description": "The route: a line, or several lines when the track has gaps",
+      "x-ngsi": {
+        "type": "GeoProperty",
+        "model": "https://datamodels.jp/ns/common/Geometry"
+      },
+      "x-iri": "https://uri.etsi.org/ngsi-ld/location"
+    },
+    "trackUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "Where the full GPS track (GPX) is published",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#trackUrl"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "startTime",
+    "location"
+  ]
+}

@@ -1,0 +1,14 @@
+# Keeps the pinned Actions current, the datamodels-toolkit Action included. Written by datamodels init.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    # Wait 8 days before proposing a new release, to lower the risk of a freshly published (possibly hijacked) version.
+    cooldown:
+      default-days: 8
+    groups:
+      github-actions:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]

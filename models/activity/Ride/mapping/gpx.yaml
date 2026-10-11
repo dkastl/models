@@ -1,0 +1,35 @@
+standard:
+  name:
+    en: GPX 1.1, the GPS Exchange Format (TopoGrafix)
+  url: https://www.topografix.com/GPX/1/1/
+  note:
+    en: "The XML format that bike computers and apps export a track in: a track (trk) with segments (trkseg) of points (trkpt) with latitude, longitude, elevation (ele) and time. Several fields of Ride are not in the file but computed from its points. This table explains the correspondence; it is not a conversion for datamodels convert (which reads CSV)."
+fields:
+  name:
+    to: trk/name
+  rideType:
+    to: trk/type
+    note:
+      en: Free text in GPX, written differently by each app (for example "cycling" or a number); chosen by hand.
+  startTime:
+    to: the time of the first trkpt
+  endTime:
+    to: the time of the last trkpt
+  distance:
+    to: computed from the trkpt
+    note:
+      en: The sum of the distances between consecutive points, on the ellipsoid or the sphere.
+  movingDuration:
+    to: computed from the trkpt times
+    note:
+      en: The time between points while moving faster than a threshold; apps choose the threshold differently.
+  elevationGain:
+    to: computed from the trkpt ele
+    note:
+      en: The sum of the rises between points, usually after smoothing, which apps do differently.
+  location:
+    to: trkseg and trkpt
+    note:
+      en: One trkseg is a LineString, several are a MultiLineString. trkpt lat and lon become [lon, lat] (GeoJSON order), simplified.
+  trackUrl:
+    to: the URL of the GPX file itself

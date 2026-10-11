@@ -1,0 +1,7 @@
+# Notes: the sources, the decisions and their reasons, what is left out. Shown on the model's page.
+notes:
+  - en: "A playground model: one bicycle ride, made from the GPS track (GPX) that a bike computer or a phone app records. It tries the toolkit with personal data that is easy to show on a map, so it is experimental and may change."
+  - en: "Reused terms keep their IRIs: name and location from NGSI-LD, startTime and endTime from schema.org, where they mean the same as on an Action. Considered (2026-10-11): schema.org ExerciseAction. Its distance is text with a unit (\"7 ft\"), and it has nothing for elevation, the route geometry or the time in motion, so those are terms of this subject. Ride is not declared a subclass of ExerciseAction, because a ride can also be a commute (TravelAction)."
+  - en: "distance, movingDuration and elevationGain are computed from the track, and apps compute them differently (smoothing of the elevation, when a pause counts as a stop). The values are the recording app's own; they are not meant to be compared across apps to the metre."
+  - en: "location is the route simplified to a few hundred points, enough for a map; the full track with every point stays in the GPX file at trackUrl."
+  - en: "Left out: the time of every track point, heart rate, cadence, power and temperature (GPX extensions such as Garmin's TrackPointExtension), speeds (they follow from distance and time), elevation loss, and the bike itself. Each can be added when something needs it."
