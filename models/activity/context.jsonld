@@ -1,15 +1,24 @@
 {
   "@context": {
     "activity": "https://dkastl.github.io/models/ns/activity#",
-    "Ride": "activity:Ride",
     "schema": "https://schema.org/",
+    "Activity": "activity:Activity",
+    "Peak": "activity:Peak",
     "name": "https://uri.etsi.org/ngsi-ld/name",
-    "rideType": "activity:rideType",
-    "startTime": "schema:startTime",
-    "endTime": "schema:endTime",
+    "sport": "activity:sport",
     "distance": "activity:distance",
     "movingDuration": "activity:movingDuration",
     "elevationGain": "activity:elevationGain",
-    "trackUrl": "activity:trackUrl"
+    "elevationLoss": "activity:elevationLoss",
+    "maxElevation": "activity:maxElevation",
+    "runs": "activity:runs",
+    "summits": "activity:summits",
+    "commute": "activity:commute",
+    "trackUrl": "activity:trackUrl",
+    "elevation": "activity:elevation",
+    "osmId": "activity:osmId",
+    "wikidata": "activity:wikidata",
+    "startTime": "schema:startTime",
+    "endTime": "schema:endTime"
   }
 }

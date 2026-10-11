@@ -1,0 +1,21 @@
+standard:
+  name:
+    en: OpenStreetMap, natural=peak
+  url: https://wiki.openstreetmap.org/wiki/Tag:natural%3Dpeak
+  note:
+    en: A peak in OpenStreetMap is a node tagged natural=peak. This table explains the correspondence; it is not a conversion for datamodels convert (which reads CSV).
+fields:
+  name:
+    to: name
+  elevation:
+    to: ele
+    note:
+      en: Metres in both; left out when the node has no ele.
+  osmId:
+    to: the node id, as node/<id>
+  wikidata:
+    to: wikidata
+  location:
+    to: the node's lat and lon
+    note:
+      en: A Point with [lon, lat] (GeoJSON order).

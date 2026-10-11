@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dkastl.github.io/models/schema/activity/Peak/v0.2.0.json",
+  "title": "Peak",
+  "description": "A mountain summit that activities can reach",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "description": "Entity id (URN)"
+    },
+    "type": {
+      "type": "string",
+      "const": "Peak",
+      "description": "Entity type"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Name of the peak",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://uri.etsi.org/ngsi-ld/name"
+    },
+    "elevation": {
+      "type": "number",
+      "description": "Height of the summit, in metres above sea level",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#elevation"
+    },
+    "osmId": {
+      "type": "string",
+      "pattern": "^node/[0-9]+$",
+      "description": "The OpenStreetMap node of the summit, as node/<id>",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#osmId"
+    },
+    "wikidata": {
+      "type": "string",
+      "pattern": "^Q[0-9]+$",
+      "description": "The Wikidata item of the peak",
+      "x-ngsi": {
+        "type": "Property"
+      },
+      "x-iri": "https://dkastl.github.io/models/ns/activity#wikidata"
+    },
+    "location": {
+      "$ref": "https://datamodels.jp/schema/common/Geometry/v1.0.0.json",
+      "properties": {
+        "type": {
+          "enum": [
+            "Point"
+          ]
+        }
+      },
+      "description": "The summit, as a point",
+      "x-ngsi": {
+        "type": "GeoProperty",
+        "model": "https://datamodels.jp/ns/common/Geometry"
+      },
+      "x-iri": "https://uri.etsi.org/ngsi-ld/location"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "name",
+    "location"
+  ]
+}

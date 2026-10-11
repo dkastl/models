@@ -1,0 +1,15 @@
+{
+  "id": "urn:ngsi-ld:Peak:osm-node-1513935256",
+  "type": "Peak",
+  "name": "六甲山",
+  "elevation": 931,
+  "osmId": "node/1513935256",
+  "wikidata": "Q462120",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      135.26374,
+      34.77799
+    ]
+  }
+}
