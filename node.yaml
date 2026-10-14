@@ -4,6 +4,11 @@ baseUrl: https://dkastl.github.io/models
 iris: hash
 languages:
   - en
+# The node's name and what it publishes, shown on its pages and in catalog.json.
+title:
+  en: "Daniel Kastl's model playground"
+description:
+  en: "A playground for trying the datamodels toolkit: activities recorded with a GPS device and the peaks they reach. The models may change."
 publisher:
   name:
     en: Daniel Kastl
