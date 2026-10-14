@@ -8,7 +8,7 @@ languages:
 title:
   en: "Daniel Kastl's model playground"
 description:
-  en: "A playground for trying the datamodels toolkit: activities recorded with a GPS device and the peaks they reach. The models may change."
+  en: "A playground for trying the datamodels toolkit."
 publisher:
   name:
     en: Daniel Kastl
